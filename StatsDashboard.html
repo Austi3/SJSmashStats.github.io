@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graph Dashboard</title>
+	<style>
+		body {
+			background-color: #1a1a1a; /* Dark gray background */
+			color: #f0f0f0; /* Light text color */
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			padding: 20px;
+		}
+
+		.graph-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.graph-container img {
+			width: 300px;
+			height: auto;
+			margin: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+			transition: all 0.3s ease;
+		}
+
+		.graph-container img:hover {
+			transform: scale(1.1);
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+		}
+
+		.graph-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+
+		.graph-modal img {
+			max-width: 90%;
+			max-height: 90%;
+			border-radius: 5px;
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+		}
+
+		.graph-modal.active {
+			display: flex;
+		}
+
+		button {
+			background-color: #404040;
+			color: #f0f0f0;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			margin: 10px;
+			font-size: 1em;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #1a1a1a;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		@media (max-width: 768px) {
+			.graph-container img {
+				width: 90%;
+				height: auto;
+				margin: 10px 0;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Graph Dashboard</h1>
+	<div class="graph-container">
+		<img src="graph1.png" alt="Graph 1" onclick="showModal('graph1.png')">
+		<img src="graph2.png" alt="Graph 2" onclick="showModal('graph2.png')">
+		<img src="graph3.png" alt="Graph 3" onclick="showModal('graph3.png')">
+		<!-- Add more images as needed -->
+	</div>
+	<div class="graph-modal" id="graph-modal">
+		<img src="" alt="" id="modal-image">
+		
